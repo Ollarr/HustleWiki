@@ -274,7 +274,7 @@ html {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	opacity: 0;
+	display: none;
 	transform: translate(-50%, -50%) scale(1.25);
 	width: 300px;
 	padding: 16px 24px;
@@ -287,8 +287,9 @@ html {
 .popup.active {
 	z-index: 20;
 	top: 450%;
-	opacity: 1;
+
 	transform: translate(-50%, -50%) scale(1);
+	display: block;
 }
 .popup .close-btn {
 	position: absolute;
@@ -376,7 +377,7 @@ header .flex-wrapper {
 	height: 65px;
 	background: var(--accent);
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-items: center;
 	gap: 15px;
 	padding: 15px 0;
@@ -644,7 +645,14 @@ input.search-submit {
 }
 
 .blog-card-banner {
-	display: none;
+	display: flex;
+	width: 700px;
+	height: 300px;
+}
+.blog-banner-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .blog-content-wrapper {
@@ -684,6 +692,10 @@ input.search-submit {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	margin-bottom: 1rem;
+}
+.btn-post {
+	border-radius: 8px;
+	padding: 8px;
 }
 .profile-wrapper {
 	display: none;
@@ -798,82 +810,7 @@ input.search-submit {
 	--ionicon-stroke-width: 50px;
 }
 /* share button */
-/* .social-share-btns-container {
-	overflow: hidden;
-	position: absolute;
-	left: 0;
-	font-size: 0;
-	top: 50%;
-	margin: -30px 0;
-	text-align: center;
-	width: 100%;
-	z-index: 111;
-}
 
-.social-share-btns {
-	display: inline-block;
-	overflow: hidden;
-}
-.social-share-btns .share-btn {
-	float: left;
-	margin: 0 5px;
-	padding: 8px 16px;
-	border-radius: 3px;
-	color: #fff;
-	font-size: 14px;
-	line-height: 18px;
-	vertical-align: middle;
-
-	transition: background 0.2s ease-in-out;
-}
-.social-share-btns .share-btn i {
-	margin-right: 5px;
-	display: inline-block;
-	font-size: 18px;
-	vertical-align: middle;
-}
-
-.share-btn {
-	background-color: #95a5a6;
-}
-.share-btn:hover {
-	background-color: #798d8f;
-}
-
-.share-btn-twitter {
-	background-color: #00aced;
-}
-.share-btn-twitter:hover {
-	background-color: #0087ba;
-}
-
-.share-btn-facebook {
-	background-color: #3b5998;
-}
-.share-btn-facebook:hover {
-	background-color: #2d4373;
-}
-
-.share-btn-linkedin {
-	background-color: #007bb6;
-}
-.share-btn-linkedin:hover {
-	background-color: #005983;
-}
-
-.share-btn-reddit {
-	background-color: #ed001c;
-}
-.share-btn-reddit:hover {
-	background-color: #ba0016;
-}
-
-.share-btn-mail {
-	background-color: #f1c40f;
-}
-.share-btn-mail:hover {
-	background-color: #dab10d;
-} */
 .share-btn {
 	padding: 8px;
 	font-size: 14px;
@@ -1001,7 +938,7 @@ input.search-submit {
 	display: none;
 }
 
-.wrap {
+.table-wrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -1173,11 +1110,11 @@ footer .wrapper {
 		border-radius: 5px;
 	}
 
-	.blog-banner-img {
+	/* .blog-banner-img {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
-	}
+		object-fit: fit;
+	} */
 	.aside {
 		display: inline-block;
 		align-self: stretch;
@@ -1266,16 +1203,20 @@ footer .wrapper {
 		margin-bottom: 3rem;
 	}
 
-	.latest-post .wrapper {
+	.latest-posts .wrapper {
+		background: var(--background-primary);
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.2rem;
 	}
 	.latest-post-item {
+		padding: 4px;
+		background: var(--white);
 		display: grid;
 		grid-template-columns: 100px 1fr;
 		gap: 8px;
-		margin-bottom: 4px;
+		margin-bottom: 8px;
+		border-radius: 4px;
 	}
 
 	.latest-post-item-image {
@@ -1709,16 +1650,20 @@ footer .wrapper {
 		margin-bottom: 3rem;
 	}
 
-	.latest-post .wrapper {
+	.latest-posts .wrapper {
+		background: var(--foreground-primary);
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.2rem;
 	}
 	.latest-post-item {
+		background: var(--white);
+		padding: 4px;
 		display: grid;
 		grid-template-columns: 100px 1fr;
 		gap: 8px;
-		margin-bottom: 4px;
+		margin-bottom: 8px;
+		border-radius: 4px;
 	}
 
 	.latest-post-item-image {
@@ -2076,16 +2021,20 @@ footer .wrapper {
 		margin-bottom: 3rem;
 	}
 
-	.latest-post .wrapper {
+	.latest-posts .wrapper {
+		background: var(--foreground-primary);
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.2rem;
 	}
 	.latest-post-item {
+		padding: 4px;
+		background: var(--white);
 		display: grid;
 		grid-template-columns: 100px 1fr;
 		gap: 8px;
-		margin-bottom: 4px;
+		margin-bottom: 8px;
+		border-radius: 4px;
 	}
 
 	.latest-post-item-image {
