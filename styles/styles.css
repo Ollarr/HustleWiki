@@ -236,14 +236,13 @@ html {
 \*-----------------------------------*/
 
 .dark-theme .btn-primary:hover {
-	color: var(--white);
-	background-color: var(--action-secondary);
+	color: black;
+	background-color: var(--white);
 }
 .dark-theme .btn-secondary {
 	background: var(--action-secondary);
 }
-
-.dark-theme .blog-topic {
+. .dark-theme .blog-topic {
 	background: var(--action-primary);
 	color: var(--foreground-secondary);
 }
